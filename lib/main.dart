@@ -37,12 +37,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       theme: ThemeData(
+        fontFamily: 'Quicksand',
         brightness: Brightness.light,
         primarySwatch: primary,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData(
+        fontFamily: 'Quicksand',
         brightness: Brightness.dark,
+        primarySwatch: primary,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       themeMode: ThemeMode.dark,
       home: NavigationBar(),

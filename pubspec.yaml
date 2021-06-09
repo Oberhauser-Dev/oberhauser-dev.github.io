@@ -51,6 +51,12 @@ flutter:
     - fonts/devicon.ttf
     - assets/images/Oberhauser-Dev-simple-sw.svg
     - assets/images/Silberperlen.jpg
+    - assets/images/projects/AppInsGruene_Logo.svg
+    - assets/images/projects/GB-FullCalendar.svg
+    - assets/images/projects/Naturfreunde_SkiAlpin_Logo_dark.svg
+    - assets/images/projects/MemeGenerator.svg
+    - assets/images/projects/Oberhauser-Dev-simple.svg
+    - assets/images/projects/TSV_Aichach_Favicon_Red.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

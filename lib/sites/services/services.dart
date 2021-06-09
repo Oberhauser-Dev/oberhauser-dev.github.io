@@ -26,27 +26,27 @@ class ServicesWidget extends StatelessWidget {
           textAlign: TextAlign.left,
         ),
         ListViewWidget([
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.flutter,
             url: 'https://flutter.dev/',
             tooltip: 'Flutter',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.react,
             url: 'https://reactjs.org/',
             tooltip: 'React (Native)',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.android,
             url: 'https://www.android.com/',
             tooltip: 'Android',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.nodejs,
             url: 'https://nodejs.org',
             tooltip: 'NodeJS',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.wordpress,
             url: 'https://wordpress.com/',
             tooltip: 'WordPress',
@@ -60,32 +60,32 @@ class ServicesWidget extends StatelessWidget {
           textAlign: TextAlign.left,
         ),
         ListViewWidget([
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.kotlin,
             url: 'https://kotlinlang.org/',
             tooltip: 'Kotlin',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.java,
             url: 'https://www.java.com/',
             tooltip: 'Java',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.php,
             url: 'https://www.php.net/',
             tooltip: 'PHP',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.dart,
             url: 'https://dart.dev/',
             tooltip: 'Dart',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.typescript,
             url: 'https://www.typescriptlang.org/',
             tooltip: 'Typescript',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.javascript,
             url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
             tooltip: 'Javascript',
@@ -99,17 +99,17 @@ class ServicesWidget extends StatelessWidget {
           textAlign: TextAlign.left,
         ),
         ListViewWidget([
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.illustrator,
             url: 'https://www.adobe.com/products/illustrator.html',
             tooltip: 'Illustrator',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Devicon.photoshop,
             url: 'https://www.adobe.com/products/photoshop.html',
             tooltip: 'Photoshop',
           ),
-          IconTileWidget(
+          IconTileWidget.icon(
             Icons.more_horiz,
             url: 'https://www.reb0.org/skills/',
             tooltip: 'See all skills',

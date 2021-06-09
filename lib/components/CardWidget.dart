@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_grid/responsive_grid.dart';
 
 class CardWidget extends StatelessWidget {
   final ImageFilter? filter;
@@ -13,10 +12,10 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveGridCol(
-      md: 12,
-      child: Center(
-        child: ClipRRect(
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: this.filter != null
               ? BackdropFilter(
@@ -32,8 +31,8 @@ class CardWidget extends StatelessWidget {
                   ),
                 )
               : this.child,
-        ),
-      ),
+        )
+      ],
     );
   }
 }

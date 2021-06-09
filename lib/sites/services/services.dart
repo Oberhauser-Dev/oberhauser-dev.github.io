@@ -7,6 +7,7 @@ class ServicesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Services',
@@ -21,7 +22,6 @@ class ServicesWidget extends StatelessWidget {
         ),
         IllustrationsWidget(),
       ],
-      crossAxisAlignment: CrossAxisAlignment.start,
     );
   }
 }

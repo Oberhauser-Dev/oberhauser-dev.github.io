@@ -151,24 +151,24 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
                   alignment: Alignment.center,
                 )),
                 child: Container(
-                  padding: EdgeInsets.only(top: appBarHeight + 40, bottom: 40),
-                  child: TabBarView(children: [
-                    CardWidget(
-                      filter: blur,
-                      child: ServicesWidget(),
-                      width: maxContainerScreenSize,
-                    ),
-                    CardWidget(
-                      filter: blur,
-                      child: ServicesWidget(),
-                      width: maxContainerScreenSize,
-                    ),
-                    CardWidget(
-                      filter: blur,
-                      child: ContactWidget(),
-                      width: maxContainerScreenSize,
-                    ),
-                  ]),
+                  margin: EdgeInsets.only(top: appBarHeight + 40, bottom: 40),
+                  child:  TabBarView(children: [
+                      CardWidget(
+                        filter: blur,
+                        child: ServicesWidget(),
+                        width: maxContainerScreenSize,
+                      ),
+                      CardWidget(
+                        filter: blur,
+                        child: ServicesWidget(),
+                        width: maxContainerScreenSize,
+                      ),
+                      CardWidget(
+                        filter: blur,
+                        child: ContactWidget(),
+                        width: maxContainerScreenSize,
+                      ),
+                    ]),
                 ),
               ),
             ])

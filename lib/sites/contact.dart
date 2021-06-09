@@ -14,7 +14,7 @@ class ContactWidget extends StatelessWidget {
         ),
         Divider(),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 15),
+          padding: EdgeInsets.symmetric(vertical: 16),
           child: SelectableText(
             '''
 August Oberhauser

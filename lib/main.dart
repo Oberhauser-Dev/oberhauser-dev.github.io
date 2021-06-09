@@ -123,71 +123,54 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: PreferredSize(
-          child: Container(
-            color: Colors.black45,
-            child: ClipRRect(
-              child: BackdropFilter(
-                filter: blur,
-                child: appBar,
-              ),
-            ),
-          ),
-          preferredSize: Size(MediaQuery.of(context).size.width, appBarHeight),
-        ),
-        body: Column(
-          children: [
-            Stack(children: [
-              Container(
-                width: screenSize.width,
-                height: screenSize.height,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                  colorFilter:
-                      ColorFilter.mode(Colors.brown.shade50, BlendMode.color),
-                  image: AssetImage('assets/images/Silberperlen.jpg'),
-                  fit: BoxFit.cover,
-                  alignment: Alignment.center,
-                )),
-                child: Container(
-                  margin: EdgeInsets.only(top: appBarHeight + 40, bottom: 40),
-                  child:  TabBarView(children: [
-                      CardWidget(
-                        filter: blur,
-                        child: ServicesWidget(),
-                        width: maxContainerScreenSize,
-                      ),
-                      CardWidget(
-                        filter: blur,
-                        child: ServicesWidget(),
-                        width: maxContainerScreenSize,
-                      ),
-                      CardWidget(
-                        filter: blur,
-                        child: ContactWidget(),
-                        width: maxContainerScreenSize,
-                      ),
-                    ]),
+          extendBodyBehindAppBar: true,
+          appBar: PreferredSize(
+            child: Container(
+              color: Colors.black45,
+              child: ClipRRect(
+                child: BackdropFilter(
+                  filter: blur,
+                  child: appBar,
                 ),
               ),
-            ])
-          ],
-          // bottomNavigationBar: BottomNavigationBar(
-          //   items: [
-          //     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          //     BottomNavigationBarItem(
-          //         icon: Icon(Icons.account_circle), label: 'Profile'),
-          //   ],
-          //   currentIndex: _currentIndex.value,
-          //   onTap: (index) {
-          //     setState(() {
-          //       _currentIndex.value = index;
-          //     });
-          //   },
-          // ),
-        ),
-      ),
+            ),
+            preferredSize:
+                Size(MediaQuery.of(context).size.width, appBarHeight),
+          ),
+          body: Stack(children: [
+            Container(
+              width: screenSize.width,
+              height: screenSize.height,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                colorFilter:
+                    ColorFilter.mode(Colors.brown.shade50, BlendMode.color),
+                image: AssetImage('assets/images/Silberperlen.jpg'),
+                fit: BoxFit.cover,
+                alignment: Alignment.center,
+              )),
+              child: Container(
+                margin: EdgeInsets.only(top: appBarHeight),
+                child: TabBarView(children: [
+                  CardWidget(
+                    filter: blur,
+                    child: ServicesWidget(),
+                    width: maxContainerScreenSize,
+                  ),
+                  CardWidget(
+                    filter: blur,
+                    child: ServicesWidget(),
+                    width: maxContainerScreenSize,
+                  ),
+                  CardWidget(
+                    filter: blur,
+                    child: ContactWidget(),
+                    width: maxContainerScreenSize,
+                  ),
+                ]),
+              ),
+            ),
+          ])),
     );
   }
 

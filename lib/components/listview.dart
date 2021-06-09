@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class IllustrationsWidget extends StatelessWidget {
+class ListViewWidget extends StatelessWidget {
+  final List<Widget> children;
+
+  ListViewWidget(this.children);
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -11,16 +15,7 @@ class IllustrationsWidget extends StatelessWidget {
         height: 200.0,
         child: ListView(
           scrollDirection: Axis.horizontal,
-          children: [
-            Container(
-              width: 200.0,
-              color: Colors.red,
-            ),
-            Container(
-              width: 200.0,
-              color: Colors.yellow,
-            ),
-          ],
+          children: this.children,
         ),
       ),
     );

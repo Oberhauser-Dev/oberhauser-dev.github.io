@@ -12,27 +12,31 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: this.filter != null
-              ? BackdropFilter(
-                  filter: this.filter!,
-                  child: Container(
-                    padding: EdgeInsets.all(26),
-                    alignment: Alignment.topLeft,
-                    constraints: BoxConstraints(maxWidth: width),
-                    decoration: new BoxDecoration(
-                      color: Colors.black45,
+    return SingleChildScrollView(
+        child: Container(
+      margin: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: this.filter != null
+                ? BackdropFilter(
+                    filter: this.filter!,
+                    child: Container(
+                      padding: EdgeInsets.all(26),
+                      alignment: Alignment.topLeft,
+                      constraints: BoxConstraints(maxWidth: width),
+                      decoration: new BoxDecoration(
+                        color: Colors.black45,
+                      ),
+                      child: this.child,
                     ),
-                    child: this.child,
-                  ),
-                )
-              : this.child,
-        )
-      ],
-    );
+                  )
+                : this.child,
+          ),
+        ],
+      ),
+    ));
   }
 }

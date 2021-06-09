@@ -48,6 +48,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - fonts/devicon.ttf
     - assets/images/Oberhauser-Dev-simple-sw.svg
     - assets/images/Silberperlen.jpg
 
@@ -62,7 +63,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Devicon
+      fonts:
+      - asset: fonts/devicon.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

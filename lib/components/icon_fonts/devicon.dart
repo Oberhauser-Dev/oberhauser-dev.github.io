@@ -7,6 +7,7 @@ class Devicon {
   static const IconData android = IconData(0xe60e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData dart = IconData(0xe9b1, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData flutter = IconData(0xe975, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData github = IconData(0xe909, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData illustrator = IconData(0xe7fa, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData java = IconData(0xe842, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData javascript = IconData(0xe845, fontFamily: _kFontFam, fontPackage: _kFontPkg);

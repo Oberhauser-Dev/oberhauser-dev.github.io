@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:oberhauser_dev/components/CardWidget.dart';
 import 'package:oberhauser_dev/sites/contact.dart';
+import 'package:oberhauser_dev/sites/projects.dart';
 import 'package:oberhauser_dev/sites/services/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -163,7 +164,7 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
                   ),
                   CardWidget(
                     filter: blur,
-                    child: ServicesWidget(),
+                    child: ProjectsWidget(),
                     width: maxContainerScreenSize,
                   ),
                   CardWidget(

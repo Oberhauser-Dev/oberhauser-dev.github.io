@@ -37,7 +37,7 @@ Technologies: Flutter | React | Kotlin | NodeJS | etc.
 Company: MyCompanyInfo''')
                   .toString();
               canLaunch(_emailLaunchUri)
-                  .then((value) => launch(_emailLaunchUri));
+                  .then((value) => launch(_emailLaunchUri, webOnlyWindowName: '_self'));
             },
             icon: Icon(Icons.email),
             label: const Text('info@oberhauser.dev')),

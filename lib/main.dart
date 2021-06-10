@@ -3,10 +3,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:oberhauser_dev/components/CardWidget.dart';
+import 'package:oberhauser_dev/components/card.dart';
 import 'package:oberhauser_dev/sites/contact.dart';
 import 'package:oberhauser_dev/sites/projects.dart';
-import 'package:oberhauser_dev/sites/services/services.dart';
+import 'package:oberhauser_dev/sites/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -74,6 +74,7 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
     Size screenSize = MediaQuery.of(context).size;
     double maxContainerScreenSize = _calculateContainerSize(screenSize);
     const double appBarHeight = 56;
+    const double footerHeight = 24;
     var appBar = Container(
       width: screenSize.width,
       child: Center(
@@ -108,52 +109,39 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
                     .then((value) => launch(urlPrivateHomepage)),
                 tooltip: 'Private Homepage',
                 icon: Icon(Icons.face)),
-          ]
-
-              // PopupMenuButton(
-              //   itemBuilder: (context) => <PopupMenuEntry<String>>[
-              //     PopupMenuItem<String>(
-              //         value: 'Share',
-              //         child: ListTile(
-              //             leading: Icon(Icons.share), title: Text('Share'))),
-              //     PopupMenuDivider(),
-              //   ],
-              //   padding: EdgeInsets.zero,
-              //   onSelected: (value) => print(value),
-              // )
-              ),
+          ]),
         ),
       ),
     );
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-          extendBodyBehindAppBar: true,
-          appBar: PreferredSize(
-            child: Container(
-              color: Colors.black45,
-              child: ClipRRect(
-                child: BackdropFilter(
-                  filter: blur,
-                  child: appBar,
-                ),
+        extendBodyBehindAppBar: true,
+        appBar: PreferredSize(
+          child: Container(
+            color: Colors.black45,
+            child: ClipRRect(
+              child: BackdropFilter(
+                filter: blur,
+                child: appBar,
               ),
             ),
-            preferredSize:
-                Size(MediaQuery.of(context).size.width, appBarHeight),
           ),
-          body: Stack(children: [
-            Container(
-              width: screenSize.width,
-              height: screenSize.height,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                colorFilter:
-                    ColorFilter.mode(Colors.brown.shade50, BlendMode.color),
-                image: AssetImage('assets/images/Silberperlen.jpg'),
-                fit: BoxFit.cover,
-                alignment: Alignment.center,
-              )),
+          preferredSize: Size(MediaQuery.of(context).size.width, appBarHeight),
+        ),
+        body: Container(
+          width: screenSize.width,
+          height: screenSize.height,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            colorFilter:
+                ColorFilter.mode(Colors.brown.shade50, BlendMode.color),
+            image: AssetImage('assets/images/Silberperlen.jpg'),
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+          )),
+          child: Column(children: [
+            Expanded(
               child: Container(
                 margin: EdgeInsets.only(top: appBarHeight),
                 child: TabBarView(children: [
@@ -175,7 +163,24 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
                 ]),
               ),
             ),
-          ])),
+            Container(
+                height: footerHeight,
+                color: Colors.black45,
+                child: ClipRRect(
+                  child: BackdropFilter(
+                    filter: blur,
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(
+                        '© ${DateTime.now().year} August Oberhauser',
+                        style: TextStyle(color: Colors.grey.shade600, fontSize: 10),
+                      ),
+                    ),
+                  ),
+                )),
+          ]),
+        ),
+      ),
     );
   }
 

@@ -16,6 +16,9 @@ class ProjectsWidget extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           textAlign: TextAlign.left,
         ),
+        SizedBox(height: 12),
+        Text('Check out the projects I have created or collaborated on.'),
+        SizedBox(height: 12),
         Divider(),
         SizedBox(height: 12),
         Row(children: [

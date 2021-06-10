@@ -14,7 +14,7 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Container(
-      margin: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
+      margin: EdgeInsets.symmetric(vertical: 32),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [

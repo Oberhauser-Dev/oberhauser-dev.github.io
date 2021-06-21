@@ -57,6 +57,7 @@ flutter:
     - assets/images/projects/MemeGenerator.svg
     - assets/images/projects/Oberhauser-Dev-simple.svg
     - assets/images/projects/TSV_Aichach_Favicon_Red.svg
+    - assets/images/projects/TSV_Aichach_Wrestling_Invert.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

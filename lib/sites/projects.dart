@@ -54,6 +54,11 @@ class ProjectsWidget extends StatelessWidget {
         ]),
         ListViewWidget([
           IconTileWidget(
+            SvgPicture.asset('assets/images/projects/TSV_Aichach_Wrestling_Invert.svg'),
+            url: 'https://wrestling-scoreboard.oberhauser.dev',
+            tooltip: 'Wrestling Scoreboard',
+          ),
+          IconTileWidget(
             SvgPicture.asset('assets/images/projects/Oberhauser-Dev-simple.svg'),
             url: 'https://oberhauser.dev',
             tooltip: 'Oberhauser Development (this page)',

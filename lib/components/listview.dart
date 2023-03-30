@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ListViewWidget extends StatelessWidget {
   final List<Widget> children;
+  final scrollController = ScrollController();
 
   ListViewWidget(this.children);
 
@@ -13,9 +13,14 @@ class ListViewWidget extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 20.0),
         height: 200.0,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: this.children,
+        child: Scrollbar(
+          thumbVisibility: true,
+          controller: scrollController,
+          child: ListView(
+            controller: scrollController,
+            scrollDirection: Axis.horizontal,
+            children: this.children,
+          ),
         ),
       ),
     );

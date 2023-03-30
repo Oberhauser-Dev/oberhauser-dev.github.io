@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:oberhauser_dev/components/icon_fonts/devicon.dart';
@@ -54,12 +53,14 @@ class ProjectsWidget extends StatelessWidget {
         ]),
         ListViewWidget([
           IconTileWidget(
-            SvgPicture.asset('assets/images/projects/TSV_Aichach_Wrestling_Invert.svg'),
+            SvgPicture.asset(
+                'assets/images/projects/TSV_Aichach_Wrestling_Invert.svg'),
             url: 'https://wrestling-scoreboard.oberhauser.dev',
             tooltip: 'Wrestling Scoreboard',
           ),
           IconTileWidget(
-            SvgPicture.asset('assets/images/projects/Oberhauser-Dev-simple.svg'),
+            SvgPicture.asset(
+                'assets/images/projects/Oberhauser-Dev-simple.svg'),
             url: 'https://oberhauser.dev',
             tooltip: 'Oberhauser Development (this page)',
           ),
@@ -79,7 +80,8 @@ class ProjectsWidget extends StatelessWidget {
         ]),
         ListViewWidget([
           IconTileWidget(
-            SvgPicture.asset('assets/images/projects/Naturfreunde_SkiAlpin_Logo_dark.svg'),
+            SvgPicture.asset(
+                'assets/images/projects/Naturfreunde_SkiAlpin_Logo_dark.svg'),
             url: 'https://expo.io/@naturfreunde/naturfreunde-ski-alpin',
             tooltip: 'Ski Alpin Schneesport App',
           ),
@@ -109,7 +111,8 @@ class ProjectsWidget extends StatelessWidget {
         ]),
         ListViewWidget([
           IconTileWidget(
-            SvgPicture.asset('assets/images/projects/TSV_Aichach_Favicon_Red.svg'),
+            SvgPicture.asset(
+                'assets/images/projects/TSV_Aichach_Favicon_Red.svg'),
             url: 'https://www.tsv-aichach.de/aktuelles/termine/',
             tooltip: 'TSV Aichach - Event Management',
           ),

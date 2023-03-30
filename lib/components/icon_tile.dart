@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class IconTileWidget extends StatelessWidget {
   final Widget icon;
@@ -10,8 +9,7 @@ class IconTileWidget extends StatelessWidget {
 
   IconTileWidget(this.icon, {this.color, this.url, this.tooltip});
 
-  IconTileWidget.icon(IconData iconData,
-      {this.color, this.url, this.tooltip})
+  IconTileWidget.icon(IconData iconData, {this.color, this.url, this.tooltip})
       : this.icon = Icon(iconData);
 
   @override
@@ -26,7 +24,8 @@ class IconTileWidget extends StatelessWidget {
           icon: icon,
           onPressed: () {
             if (this.url != null) {
-              canLaunch(this.url!).then((value) => launch(this.url!));
+              canLaunchUrlString(this.url!)
+                  .then((value) => launchUrlString(this.url!));
             }
           },
           tooltip: tooltip,

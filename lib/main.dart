@@ -7,7 +7,7 @@ import 'package:oberhauser_dev/components/card.dart';
 import 'package:oberhauser_dev/sites/contact.dart';
 import 'package:oberhauser_dev/sites/projects.dart';
 import 'package:oberhauser_dev/sites/services.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
   runApp(MyApp());
@@ -85,7 +85,7 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
               onPressed: () {},
               icon: SvgPicture.asset(
                   'assets/images/Oberhauser-Dev-simple-sw.svg',
-                  color: Colors.white,
+                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
                   semanticsLabel: appTitle),
               padding: EdgeInsets.all(12),
             ),
@@ -105,8 +105,8 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
             IconButton(
                 color: Colors.white,
                 padding: EdgeInsets.only(right: 20),
-                onPressed: () => canLaunch(urlPrivateHomepage)
-                    .then((value) => launch(urlPrivateHomepage)),
+                onPressed: () => canLaunchUrlString(urlPrivateHomepage)
+                    .then((value) => launchUrlString(urlPrivateHomepage)),
                 tooltip: 'Private Homepage',
                 icon: Icon(Icons.face)),
           ]),
@@ -173,7 +173,8 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
                       alignment: Alignment.center,
                       child: Text(
                         '© ${DateTime.now().year} August Oberhauser',
-                        style: TextStyle(color: Colors.grey.shade600, fontSize: 10),
+                        style: TextStyle(
+                            color: Colors.grey.shade600, fontSize: 10),
                       ),
                     ),
                   ),

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:oberhauser_dev/components/icon_fonts/devicon.dart';
 import 'package:oberhauser_dev/components/icon_tile.dart';
@@ -16,7 +15,8 @@ class ServicesWidget extends StatelessWidget {
           textAlign: TextAlign.left,
         ),
         SizedBox(height: 12),
-        Text('I offer the following technologies, with which you can have your web presence or app implemented.'),
+        Text(
+            'I offer the following technologies, with which you can have your web presence or app implemented.'),
         SizedBox(height: 12),
         Divider(),
         SizedBox(height: 12),

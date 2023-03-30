@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ContactWidget extends StatelessWidget {
   @override
@@ -24,7 +23,7 @@ Johann-Clanze-Str. 32,
         ),
         TextButton.icon(
             style: TextButton.styleFrom(
-              primary: Colors.white,
+              foregroundColor: Colors.white,
             ),
             onPressed: () {
               final String _emailLaunchUri = Uri(
@@ -36,14 +35,14 @@ Description: MyProjectDescription
 Technologies: Flutter | React | Kotlin | NodeJS | etc.
 Company: MyCompanyInfo''')
                   .toString();
-              canLaunch(_emailLaunchUri)
-                  .then((value) => launch(_emailLaunchUri, webOnlyWindowName: '_self'));
+              canLaunchUrlString(_emailLaunchUri).then((value) =>
+                  launchUrlString(_emailLaunchUri, webOnlyWindowName: '_self'));
             },
             icon: Icon(Icons.email),
             label: const Text('info@oberhauser.dev')),
         TextButton.icon(
             style: TextButton.styleFrom(
-              primary: Colors.white,
+              foregroundColor: Colors.white,
             ),
             onPressed: () {},
             icon: Icon(Icons.language),

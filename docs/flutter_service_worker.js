@@ -3,38 +3,41 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "61126696b9bf26439c8c7c5d55892663",
-"assets/assets/images/Oberhauser-Dev-simple-sw.svg": "f47388e4df2a709f05ac2a640a4e999e",
-"assets/assets/images/projects/AppInsGruene_Logo.svg": "57a74dcd2200a7bf99d6275ea9e0921c",
+  "assets/AssetManifest.json": "17a05b38066cdbc40012beebf957f43f",
+"assets/assets/images/Oberhauser-Dev-simple-sw.svg": "10cd86160d53c9461e6c31c1b5ae59f8",
+"assets/assets/images/projects/AppInsGruene_Logo.svg": "870b3b92a8a1674485cc2d78bec32b01",
 "assets/assets/images/projects/GB-FullCalendar.svg": "492894e0bb88b2118766ac82f7aa48f1",
-"assets/assets/images/projects/MemeGenerator.svg": "172676bf0a887eae3881efc0bf5647af",
+"assets/assets/images/projects/MemeGenerator.svg": "652ee8f5ae2029f628101750dbc4ae21",
 "assets/assets/images/projects/Naturfreunde_SkiAlpin_Logo_dark.svg": "78320d447617ec1b91f5c011e8d1adde",
 "assets/assets/images/projects/Oberhauser-Dev-simple.svg": "c1b6c83a1a6b9b43f4e4fb730185e08b",
-"assets/assets/images/projects/TSV_Aichach_Favicon_Red.svg": "fba6ab88276b4cd7c35e67582ca068ac",
+"assets/assets/images/projects/TSV_Aichach_Favicon_Red.svg": "6755f4aa48905ec9b205822cc205a04f",
+"assets/assets/images/projects/TSV_Aichach_Wrestling_Invert.svg": "ab79f34dd15b4c702fd67a93083a2f4c",
 "assets/assets/images/Silberperlen.jpg": "78a5d3004fcee97a1f4a8d51620abe26",
-"assets/FontManifest.json": "dad74934c8826c09d2830e0fb65d0a41",
+"assets/FontManifest.json": "ca92a30637025cfb5173f16de9fd2f5b",
 "assets/fonts/devicon.ttf": "826408cfa802d99c10b43231adf48157",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
 "assets/fonts/Quicksand.ttf": "f9baef8ac0d836e6486419e282e42336",
-"assets/NOTICES": "61eb0404d57cfcdd88dfb8249f51d01c",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/NOTICES": "dfa92dc9daed9a83cbf13bc48f5b6f9b",
+"canvaskit/canvaskit.js": "97937cb4c2c2073c968525a3e08c86a3",
+"canvaskit/canvaskit.wasm": "3de12d898ec208a5f31362cc00f09b9e",
+"canvaskit/profiling/canvaskit.js": "c21852696bc1cc82e8894d851c01921a",
+"canvaskit/profiling/canvaskit.wasm": "371bc4e204443b0d5e774d64a046eb99",
 "favicon.png": "a7aebf48180786fc1e879eb3ef687357",
+"flutter.js": "1cfe996e845b3a8a33f57607e8b09ee4",
 "icons/Icon-192.png": "322ad1965f56c57a1a6a5faf9f541d4c",
 "icons/Icon-512.png": "520999ab77265e3987771245e34a30ed",
-"index.html": "c145dc2694e55b5d02decabeb13da045",
-"/": "c145dc2694e55b5d02decabeb13da045",
-"main.dart.js": "a76bced92a4d2c2806b1f076d8d8a03e",
-"manifest.json": "a2dc8df1858878120723851e6e7e3a3f",
-"version.json": "a28649005dc5841469f016064c171d51"
+"index.html": "896f5d7f1814d961c33aaac321a1377b",
+"/": "896f5d7f1814d961c33aaac321a1377b",
+"main.dart.js": "3e1bb487a175bca1b70408e2fad9b4fb",
+"manifest.json": "372ac956bce15913d7707c51c1a46b6a",
+"version.json": "e3fe4b20ca668f19f0d5bce3866e7166"
 };
 
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
-"main.dart.js",
+  "main.dart.js",
 "index.html",
-"assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
@@ -133,9 +136,11 @@ self.addEventListener("fetch", (event) => {
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache.
+        // lazily populate the cache only if the resource was successfully fetched.
         return response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone());
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })

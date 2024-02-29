@@ -7,32 +7,34 @@ class CardWidget extends StatelessWidget {
   final double width;
   final Widget? child;
 
-  CardWidget({this.filter, this.width = double.infinity, this.child});
+  const CardWidget(
+      {Key? key, this.filter, this.width = double.infinity, this.child})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Container(
-      margin: EdgeInsets.symmetric(vertical: 32),
+      margin: const EdgeInsets.symmetric(vertical: 32),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: this.filter != null
+            child: filter != null
                 ? BackdropFilter(
-                    filter: this.filter!,
+                    filter: filter!,
                     child: Container(
-                      padding: EdgeInsets.all(26),
+                      padding: const EdgeInsets.all(26),
                       alignment: Alignment.topLeft,
                       constraints: BoxConstraints(maxWidth: width),
-                      decoration: new BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.black45,
                       ),
-                      child: this.child,
+                      child: child,
                     ),
                   )
-                : this.child,
+                : child,
           ),
         ],
       ),

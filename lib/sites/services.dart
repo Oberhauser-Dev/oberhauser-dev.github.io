@@ -4,23 +4,25 @@ import 'package:oberhauser_dev/components/icon_tile.dart';
 import 'package:oberhauser_dev/components/listview.dart';
 
 class ServicesWidget extends StatelessWidget {
+  const ServicesWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Services',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           textAlign: TextAlign.left,
         ),
-        SizedBox(height: 12),
-        Text(
+        const SizedBox(height: 12),
+        const Text(
             'The following technologies are offered for creating your web presence or app implementation.'),
-        SizedBox(height: 12),
-        Divider(),
-        SizedBox(height: 12),
-        Text(
+        const SizedBox(height: 12),
+        const Divider(),
+        const SizedBox(height: 12),
+        const Text(
           'Frameworks / Libraries',
           style: TextStyle(fontWeight: FontWeight.normal, fontSize: 22),
           textAlign: TextAlign.left,
@@ -52,9 +54,9 @@ class ServicesWidget extends StatelessWidget {
             tooltip: 'WordPress',
           ),
         ]),
-        Divider(),
-        SizedBox(height: 12),
-        Text(
+        const Divider(),
+        const SizedBox(height: 12),
+        const Text(
           'Languages',
           style: TextStyle(fontWeight: FontWeight.normal, fontSize: 22),
           textAlign: TextAlign.left,
@@ -91,9 +93,9 @@ class ServicesWidget extends StatelessWidget {
             tooltip: 'Javascript',
           ),
         ]),
-        Divider(),
-        SizedBox(height: 12),
-        Text(
+        const Divider(),
+        const SizedBox(height: 12),
+        const Text(
           'More',
           style: TextStyle(fontWeight: FontWeight.normal, fontSize: 22),
           textAlign: TextAlign.left,

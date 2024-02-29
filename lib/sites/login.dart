@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginForm extends StatefulWidget {
+  const LoginForm({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return LoginFormState();
@@ -42,14 +44,13 @@ class LoginFormState extends State<LoginForm> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(SnackBar(content: Text('Saved!')));
-                        print(formData);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Saved!')));
                       } else {
                         _autoValidate = AutovalidateMode.always;
                       }
                     },
-                    child: Text('Submit'),
+                    child: const Text('Submit'),
                   )
                 ],
               ),

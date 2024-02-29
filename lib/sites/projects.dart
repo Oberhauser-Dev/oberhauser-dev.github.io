@@ -5,22 +5,24 @@ import 'package:oberhauser_dev/components/icon_tile.dart';
 import 'package:oberhauser_dev/components/listview.dart';
 
 class ProjectsWidget extends StatelessWidget {
+  const ProjectsWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Projects',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           textAlign: TextAlign.left,
         ),
-        SizedBox(height: 12),
-        Text('Check out the projects I have created or collaborated on.'),
-        SizedBox(height: 12),
-        Divider(),
-        SizedBox(height: 12),
-        Row(children: [
+        const SizedBox(height: 12),
+        const Text('Check out the projects I have created or collaborated on.'),
+        const SizedBox(height: 12),
+        const Divider(),
+        const SizedBox(height: 12),
+        const Row(children: [
           Icon(Devicon.flutter),
           SizedBox(
             width: 12,
@@ -51,9 +53,9 @@ class ProjectsWidget extends StatelessWidget {
             tooltip: 'Oberhauser Development (this page)',
           ),
         ]),
-        Divider(),
-        SizedBox(height: 12),
-        Row(children: [
+        const Divider(),
+        const SizedBox(height: 12),
+        const Row(children: [
           Icon(Devicon.android),
           SizedBox(
             width: 12,
@@ -71,9 +73,9 @@ class ProjectsWidget extends StatelessWidget {
             tooltip: 'App Ins Grüne (Collab., LMU Munich)',
           ),
         ]),
-        Divider(),
-        SizedBox(height: 12),
-        Row(children: [
+        const Divider(),
+        const SizedBox(height: 12),
+        const Row(children: [
           Icon(Devicon.react),
           SizedBox(
             width: 12,
@@ -96,9 +98,9 @@ class ProjectsWidget extends StatelessWidget {
             tooltip: 'GB FullCalendar',
           ),
         ]),
-        Divider(),
-        SizedBox(height: 12),
-        Row(children: [
+        const Divider(),
+        const SizedBox(height: 12),
+        const Row(children: [
           Icon(Devicon.wordpress),
           SizedBox(
             width: 12,
@@ -117,9 +119,9 @@ class ProjectsWidget extends StatelessWidget {
             tooltip: 'TSV Aichach - Event Management',
           ),
         ]),
-        Divider(),
-        SizedBox(height: 12),
-        Row(children: [
+        const Divider(),
+        const SizedBox(height: 12),
+        const Row(children: [
           Icon(Icons.more_horiz),
           SizedBox(
             width: 12,

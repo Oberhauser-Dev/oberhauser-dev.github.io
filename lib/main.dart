@@ -10,7 +10,7 @@ import 'package:oberhauser_dev/sites/services.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 const appTitle = 'Oberhauser Development';
@@ -19,18 +19,20 @@ class MyApp extends StatelessWidget {
   static MaterialColor primary = MaterialColor(
     Colors.grey.shade900.value,
     <int, Color>{
-      50: Color(0xFFE3F2FD),
-      100: Color(0xFFBBDEFB),
-      200: Color(0xFF90CAF9),
-      300: Color(0xFF64B5F6),
-      400: Color(0xFF42A5F5),
+      50: const Color(0xFFE3F2FD),
+      100: const Color(0xFFBBDEFB),
+      200: const Color(0xFF90CAF9),
+      300: const Color(0xFF64B5F6),
+      400: const Color(0xFF42A5F5),
       500: Color(Colors.grey.shade900.value),
-      600: Color(0xFF1E88E5),
-      700: Color(0xFF1976D2),
-      800: Color(0xFF1565C0),
-      900: Color(0xFF0D47A1),
+      600: const Color(0xFF1E88E5),
+      700: const Color(0xFF1976D2),
+      800: const Color(0xFF1565C0),
+      900: const Color(0xFF0D47A1),
     },
   );
+
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -50,7 +52,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       themeMode: ThemeMode.dark,
-      home: NavigationBar(),
+      home: const NavigationBar(),
     );
   }
 }
@@ -65,7 +67,7 @@ class NavigationBar extends StatefulWidget {
 }
 
 class NavigationBarState extends State<NavigationBar> with RestorationMixin {
-  final blur = new ImageFilter.blur(sigmaX: 16, sigmaY: 16);
+  final blur = ImageFilter.blur(sigmaX: 16, sigmaY: 16);
   final RestorableInt _currentIndex = RestorableInt(0);
   final urlPrivateHomepage = 'https://reb0.org';
 
@@ -75,10 +77,10 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
     double maxContainerScreenSize = _calculateContainerSize(screenSize);
     const double appBarHeight = 56;
     const double footerHeight = 24;
-    var appBar = Container(
+    var appBar = SizedBox(
       width: screenSize.width,
       child: Center(
-        child: Container(
+        child: SizedBox(
           width: maxContainerScreenSize,
           child: Row(children: [
             IconButton(
@@ -86,11 +88,11 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
               icon: SvgPicture.asset(
                 'assets/images/Oberhauser-Dev-simple-sw.svg',
                 fit: BoxFit.scaleDown,
-                colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 semanticsLabel: appTitle,
                 width: 30,
               ),
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
             ),
             Expanded(
               child: TabBar(
@@ -107,11 +109,11 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
             ),
             IconButton(
               color: Colors.white,
-              padding: EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 20),
               onPressed: () => canLaunchUrlString(urlPrivateHomepage)
                   .then((value) => launchUrlString(urlPrivateHomepage)),
               tooltip: 'Private Homepage',
-              icon: Icon(Icons.face),
+              icon: const Icon(Icons.face),
             ),
           ]),
         ),
@@ -122,6 +124,7 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: PreferredSize(
+          preferredSize: Size(MediaQuery.of(context).size.width, appBarHeight),
           child: Container(
             color: Colors.black45,
             child: ClipRRect(
@@ -131,7 +134,6 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
               ),
             ),
           ),
-          preferredSize: Size(MediaQuery.of(context).size.width, appBarHeight),
         ),
         body: Container(
           width: screenSize.width,
@@ -140,29 +142,29 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
               image: DecorationImage(
             colorFilter:
                 ColorFilter.mode(Colors.brown.shade50, BlendMode.color),
-            image: AssetImage('assets/images/Silberperlen.jpg'),
+            image: const AssetImage('assets/images/Silberperlen.jpg'),
             fit: BoxFit.cover,
             alignment: Alignment.center,
           )),
           child: Column(children: [
             Expanded(
               child: Container(
-                margin: EdgeInsets.only(top: appBarHeight),
+                margin: const EdgeInsets.only(top: appBarHeight),
                 child: TabBarView(children: [
                   CardWidget(
                     filter: blur,
-                    child: ServicesWidget(),
                     width: maxContainerScreenSize,
+                    child: const ServicesWidget(),
                   ),
                   CardWidget(
                     filter: blur,
-                    child: ProjectsWidget(),
                     width: maxContainerScreenSize,
+                    child: const ProjectsWidget(),
                   ),
                   CardWidget(
                     filter: blur,
-                    child: ContactWidget(),
                     width: maxContainerScreenSize,
+                    child: const ContactWidget(),
                   ),
                 ]),
               ),

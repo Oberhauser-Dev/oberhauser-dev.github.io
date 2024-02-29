@@ -4,14 +4,14 @@ class ListViewWidget extends StatelessWidget {
   final List<Widget> children;
   final scrollController = ScrollController();
 
-  ListViewWidget(this.children);
+  ListViewWidget(this.children, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 20.0),
+        margin: const EdgeInsets.symmetric(vertical: 20.0),
         height: 200.0,
         child: Scrollbar(
           thumbVisibility: true,
@@ -19,7 +19,7 @@ class ListViewWidget extends StatelessWidget {
           child: ListView(
             controller: scrollController,
             scrollDirection: Axis.horizontal,
-            children: this.children,
+            children: children,
           ),
         ),
       ),

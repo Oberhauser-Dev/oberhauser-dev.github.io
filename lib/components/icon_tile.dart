@@ -30,6 +30,7 @@ class IconTileWidget extends StatelessWidget {
           },
           tooltip: tooltip,
         ),
+        width: 140,
       ),
     );
   }

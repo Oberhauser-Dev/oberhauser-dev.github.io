@@ -16,7 +16,7 @@ class ServicesWidget extends StatelessWidget {
         ),
         SizedBox(height: 12),
         Text(
-            'I offer the following technologies, with which you can have your web presence or app implemented.'),
+            'The following technologies are offered for creating your web presence or app implementation.'),
         SizedBox(height: 12),
         Divider(),
         SizedBox(height: 12),

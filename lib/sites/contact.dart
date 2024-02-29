@@ -17,8 +17,8 @@ class ContactWidget extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 16),
           child: SelectableText('''
 August Oberhauser
-Johann-Clanze-Str. 32,
-81369 Munich, Germany
+Großhausener Str. 16,
+86551 Aichach, Germany
 '''),
         ),
         TextButton.icon(

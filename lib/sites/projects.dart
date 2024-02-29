@@ -21,6 +21,39 @@ class ProjectsWidget extends StatelessWidget {
         Divider(),
         SizedBox(height: 12),
         Row(children: [
+          Icon(Devicon.flutter),
+          SizedBox(
+            width: 12,
+          ),
+          Text(
+            'Flutter',
+            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 22),
+            textAlign: TextAlign.left,
+          ),
+        ]),
+        ListViewWidget([
+          IconTileWidget(
+            SvgPicture.asset(
+                'assets/images/projects/TSV_Aichach_Wrestling_Invert.svg'),
+            url: 'https://wrestling-scoreboard.oberhauser.dev',
+            tooltip: 'Wrestling Scoreboard',
+          ),
+          IconTileWidget(
+            SvgPicture.asset(
+                'assets/images/projects/Naturfreunde_SkiAlpin_Logo_dark.svg'),
+            url: 'https://ski.naturfreunde.oberhauser.dev',
+            tooltip: 'Naturfreunde Ski Alpin Schneesport App',
+          ),
+          IconTileWidget(
+            SvgPicture.asset(
+                'assets/images/projects/Oberhauser-Dev-simple.svg'),
+            url: 'https://oberhauser.dev',
+            tooltip: 'Oberhauser Development (this page)',
+          ),
+        ]),
+        Divider(),
+        SizedBox(height: 12),
+        Row(children: [
           Icon(Devicon.android),
           SizedBox(
             width: 12,
@@ -41,33 +74,6 @@ class ProjectsWidget extends StatelessWidget {
         Divider(),
         SizedBox(height: 12),
         Row(children: [
-          Icon(Devicon.flutter),
-          SizedBox(
-            width: 12,
-          ),
-          Text(
-            'Flutter',
-            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 22),
-            textAlign: TextAlign.left,
-          ),
-        ]),
-        ListViewWidget([
-          IconTileWidget(
-            SvgPicture.asset(
-                'assets/images/projects/TSV_Aichach_Wrestling_Invert.svg'),
-            url: 'https://wrestling-scoreboard.oberhauser.dev',
-            tooltip: 'Wrestling Scoreboard',
-          ),
-          IconTileWidget(
-            SvgPicture.asset(
-                'assets/images/projects/Oberhauser-Dev-simple.svg'),
-            url: 'https://oberhauser.dev',
-            tooltip: 'Oberhauser Development (this page)',
-          ),
-        ]),
-        Divider(),
-        SizedBox(height: 12),
-        Row(children: [
           Icon(Devicon.react),
           SizedBox(
             width: 12,
@@ -79,17 +85,11 @@ class ProjectsWidget extends StatelessWidget {
           ),
         ]),
         ListViewWidget([
-          IconTileWidget(
-            SvgPicture.asset(
-                'assets/images/projects/Naturfreunde_SkiAlpin_Logo_dark.svg'),
-            url: 'https://expo.io/@naturfreunde/naturfreunde-ski-alpin',
-            tooltip: 'Ski Alpin Schneesport App',
-          ),
-          IconTileWidget(
-            SvgPicture.asset('assets/images/projects/MemeGenerator.svg'),
-            url: 'https://memes.reb0.org/',
-            tooltip: 'Meme Generator (Collab., LMU Munich)',
-          ),
+          // IconTileWidget(
+          //   SvgPicture.asset('assets/images/projects/MemeGenerator.svg'),
+          //   url: 'https://memes.reb0.org/',
+          //   tooltip: 'Meme Generator (Collab., LMU Munich)',
+          // ),
           IconTileWidget(
             SvgPicture.asset('assets/images/projects/GB-FullCalendar.svg'),
             url: 'https://github.com/Oberhauser-Dev/gb-fullcalendar',

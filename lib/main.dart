@@ -84,9 +84,12 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
             IconButton(
               onPressed: () {},
               icon: SvgPicture.asset(
-                  'assets/images/Oberhauser-Dev-simple-sw.svg',
-                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                  semanticsLabel: appTitle),
+                'assets/images/Oberhauser-Dev-simple-sw.svg',
+                fit: BoxFit.scaleDown,
+                colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                semanticsLabel: appTitle,
+                width: 30,
+              ),
               padding: EdgeInsets.all(12),
             ),
             Expanded(
@@ -103,12 +106,13 @@ class NavigationBarState extends State<NavigationBar> with RestorationMixin {
               ),
             ),
             IconButton(
-                color: Colors.white,
-                padding: EdgeInsets.only(right: 20),
-                onPressed: () => canLaunchUrlString(urlPrivateHomepage)
-                    .then((value) => launchUrlString(urlPrivateHomepage)),
-                tooltip: 'Private Homepage',
-                icon: Icon(Icons.face)),
+              color: Colors.white,
+              padding: EdgeInsets.only(right: 20),
+              onPressed: () => canLaunchUrlString(urlPrivateHomepage)
+                  .then((value) => launchUrlString(urlPrivateHomepage)),
+              tooltip: 'Private Homepage',
+              icon: Icon(Icons.face),
+            ),
           ]),
         ),
       ),
